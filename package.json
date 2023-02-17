@@ -1,0 +1,29 @@
+{
+  "name": "@weichwarenprojekt/ts-importer",
+  "version": "0.0.0",
+  "description": "A library that allows you to load typescript files at runtime.",
+  "main": "./src/index.ts",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Weichwarenprojekt/ts-importer.git"
+  },
+  "author": "Weichwarenprojekt <info@weichwarenprojekt.de> (https://weichwarenprojekt.de/)",
+  "contributors": [
+    "Tim Niederer <tim.niederer@weichwarenprojekt.de> (https://weichwarenprojekt.de/)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Weichwarenprojekt/ts-importer/issues"
+  },
+  "homepage": "https://github.com/Weichwarenprojekt/ts-importer#readme",
+  "keywords": [
+    "typescript",
+    "import",
+    "require",
+    "runtime"
+  ]
+}
