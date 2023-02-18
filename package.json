@@ -25,5 +25,15 @@
     "import",
     "require",
     "runtime"
-  ]
+  ],
+  "devDependencies": {
+    "@jest/globals": "^29.4.3",
+    "@types/node": "^18.13.0",
+    "jest": "^29.4.3",
+    "prettier": "^2.8.4",
+    "ts-jest": "^29.0.5"
+  },
+  "dependencies": {
+    "typescript": "^4.9.5"
+  }
 }
