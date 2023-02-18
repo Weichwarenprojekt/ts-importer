@@ -19,7 +19,7 @@ The library only offers the "loadModule" function.
 You can simply call it like this:
 
 ```javascript
-import { loadModule } from "ts-importer";
+import { loadModule } from "@weichwarenprojekt/ts-importer";
 
 loadModule("/absolute/path/to/the/module.ts");
 ```
@@ -28,7 +28,7 @@ In case you have special requirements you can also override the transpileOptions
 providing the TranspileOptions as second parameter:
 
 ```javascript
-import { loadModule } from "ts-importer";
+import { loadModule } from "@weichwarenprojekt/ts-importer";
 import { ScriptTarget } from "typescript";
 
 loadModule("/absolute/path/to/the/module.ts", {

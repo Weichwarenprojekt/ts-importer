@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, jest } from "@jest/globals";
-import { loadModule } from "../src";
+import { loadModule } from "../../src";
 import path from "path";
 import ts, { ModuleKind, ScriptTarget, TranspileOptions } from "typescript";
 
@@ -62,7 +62,7 @@ describe("loadModule(filePath: string)", () => {
         const exports = loadModule(path.resolve(__dirname, "simple-typescript.ts"), transpileOptions);
         expect(exports).toEqual({ simpleTypescript: "Simple Typescript" });
         expect(tsTranspile).toHaveBeenCalledWith(
-            'export const simpleTypescript = "Simple Typescript";',
+            'export const simpleTypescript = "Simple Typescript";\n',
             transpileOptions,
         );
     });
