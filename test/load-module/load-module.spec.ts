@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it, jest } from "@jest/globals";
 import { loadModule } from "../../src";
 import path from "path";
 import ts, { ModuleKind, ScriptTarget, TranspileOptions } from "typescript";
+import * as os from "os";
 
 describe("loadModule(filePath: string)", () => {
     beforeEach(() => {
@@ -62,7 +63,7 @@ describe("loadModule(filePath: string)", () => {
         const exports = loadModule(path.resolve(__dirname, "simple-typescript.ts"), transpileOptions);
         expect(exports).toEqual({ simpleTypescript: "Simple Typescript" });
         expect(tsTranspile).toHaveBeenCalledWith(
-            'export const simpleTypescript = "Simple Typescript";\n',
+            `export const simpleTypescript = "Simple Typescript";${os.EOL}`,
             transpileOptions,
         );
     });
