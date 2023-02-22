@@ -3,7 +3,7 @@
     "version": "0.1.4",
     "description": "A library that allows you to load typescript files at runtime.",
     "main": "./dist/index.js",
-    "types": "./src/index.ts",
+    "types": "./dist/index.d.ts",
     "scripts": {
         "build": "node esbuild.js && tsc --emitDeclarationOnly",
         "test": "jest",
