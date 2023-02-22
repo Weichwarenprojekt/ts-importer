@@ -5,9 +5,10 @@
     "main": "./dist/index.js",
     "types": "./src/index.ts",
     "scripts": {
-        "build": "node esbuild.js",
+        "build": "node esbuild.js && tsc --emitDeclarationOnly",
         "test": "jest",
-        "coverage": "jest --coverage"
+        "coverage": "jest --coverage",
+        "prepublishOnly": "yarn build"
     },
     "repository": {
         "type": "git",

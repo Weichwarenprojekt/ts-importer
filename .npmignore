@@ -1,5 +1,5 @@
 **/*
-!src/**/*
+!3rdpartylicenses.json
 !dist/**/*
 !package.json
 !README.md
