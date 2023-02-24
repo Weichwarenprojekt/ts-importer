@@ -29,6 +29,7 @@ describe("loadModule(filePath: string)", () => {
         expect(consoleLog).toHaveBeenCalledTimes(1);
         expect(consoleLog).toHaveBeenCalledWith("This log should come through to the original context.");
         expect(exports).toEqual({
+            pathResolve: path.resolve(__dirname, "pathResolve"),
             dirname: __dirname,
             filename: path.resolve(__dirname, "complex.ts"),
             processCwd: process.cwd(),
