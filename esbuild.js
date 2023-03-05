@@ -7,13 +7,24 @@ const deleteDist = () => fs.rmSync("dist", { force: true, recursive: true });
 deleteDist();
 
 // Bundle the cli
+const options = {
+    entryPoints: ["./src/index.ts"],
+    platform: "node",
+    external: Object.keys(packageJson.dependencies),
+    minify: true,
+    bundle: true,
+};
 esbuild
     .build({
-        entryPoints: ["./src/index.ts"],
-        minify: true,
-        bundle: true,
+        ...options,
         outfile: "./dist/index.js",
-        platform: "node",
-        external: Object.keys(packageJson.dependencies),
+        format: "cjs",
+    })
+    .catch(deleteDist);
+esbuild
+    .build({
+        ...options,
+        outfile: "./dist/index.mjs",
+        format: "esm",
     })
     .catch(deleteDist);
