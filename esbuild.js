@@ -1,6 +1,6 @@
-const esbuild = require("esbuild");
-const packageJson = require("./package.json");
-const fs = require("fs");
+import esbuild from "esbuild";
+import packageJson from "./package.json" assert { type: "json" };
+import fs from "fs";
 
 // Delete the dist folder
 const deleteDist = () => fs.rmSync("dist", { force: true, recursive: true });
@@ -17,7 +17,7 @@ const options = {
 esbuild
     .build({
         ...options,
-        outfile: "./dist/index.js",
+        outfile: "./dist/index.cjs",
         format: "cjs",
     })
     .catch(deleteDist);

@@ -2,9 +2,16 @@
     "name": "@weichwarenprojekt/ts-importer",
     "version": "0.1.6",
     "description": "A library that allows you to load typescript files at runtime.",
-    "main": "./dist/index.js",
+    "main": "./dist/index.cjs",
     "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "require": "./dist/index.cjs",
+            "import": "./dist/index.mjs",
+            "types": "./dist/index.d.ts"
+        }
+    },
     "type": "module",
     "scripts": {
         "build": "node esbuild.js && tsc --emitDeclarationOnly",

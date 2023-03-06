@@ -1,5 +1,5 @@
 import fs from "fs";
-import ts, { ScriptTarget, TranspileOptions } from "typescript";
+import ts from "typescript";
 import vm from "vm";
 import path from "path";
 import { createRequire } from "module";
@@ -27,7 +27,7 @@ function getGlobalCopy(): typeof global {
  * @param filePath The absolute path to the source file
  * @param transpileOptions The options for the typescript transpiler
  */
-export function loadModule<T>(filePath: string, transpileOptions?: TranspileOptions) {
+export function loadModule<T>(filePath: string, transpileOptions?: ts.TranspileOptions) {
     // Only allow absolute paths to avoid confusion
     if (!path.isAbsolute(filePath)) throw new Error("The path to the module has to be absolute!");
 
@@ -36,7 +36,7 @@ export function loadModule<T>(filePath: string, transpileOptions?: TranspileOpti
     const jsCode = ts.transpileModule(
         tsCode,
         transpileOptions ?? {
-            compilerOptions: { module: ts.ModuleKind.CommonJS, target: ScriptTarget.ES2015 },
+            compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2015 },
         },
     ).outputText;
     const exports = {} as T;
