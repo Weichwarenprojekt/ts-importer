@@ -1,6 +1,6 @@
 {
     "name": "@weichwarenprojekt/ts-importer",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "description": "A library that allows you to load typescript files at runtime.",
     "main": "./dist/index.cjs",
     "module": "./dist/index.mjs",
