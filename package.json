@@ -15,9 +15,9 @@
     "type": "module",
     "scripts": {
         "build": "node esbuild.js && tsc --emitDeclarationOnly",
-        "test": "yarn build && jest",
-        "coverage": "yarn build && jest --coverage",
-        "prepublishOnly": "yarn build"
+        "test": "npm run build && jest",
+        "coverage": "npm run build && jest --coverage",
+        "prepublishOnly": "npm run build"
     },
     "repository": {
         "type": "git",
